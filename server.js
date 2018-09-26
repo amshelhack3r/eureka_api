@@ -91,4 +91,25 @@ app.post("/:table", (req, res) => {
   });
 });
 
+app.put("/:table/:column/:id", (req, res) => {
+  let arr = new Array();
+  for (const key of Object.keys(req.body)) {
+    arr.push(`${key}='${req.body[key]}'`);
+  }
+  const sql = `UPDATE ${req.params.table} SET ${arr} where ${
+    req.params.column
+  } = '${req.params.id}'`;
+
+  conn.query(sql, err => {
+    if (err) {
+      return res.status(304).json({
+        err
+      });
+    }
+    return res.status(200).json({
+      success: "Record updated"
+    });
+  });
+});
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
