@@ -111,5 +111,20 @@ app.put("/:table/:column/:id", (req, res) => {
     });
   });
 });
+app.delete("/:table/:column/:id", (req, res) => {
+  const sql = `DELETE from ${req.params.table} WHERE ${req.params.column}='${
+    req.params.id
+  }'`;
+
+  conn.query(sql, err => {
+    if (err) {
+      return res.status(404).json({ err });
+    }
+
+    return res.status(200).json({
+      success: "Entry deleted"
+    });
+  });
+});
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
