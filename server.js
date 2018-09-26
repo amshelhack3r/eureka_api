@@ -68,4 +68,27 @@ app.get("/:job/:job_number", (req, res) => {
     res.send("JOB CALLED");
   }
 });
+
+/**Now we do some post requests */
+app.post("/:table", (req, res) => {
+  let val = Object.values(req.body);
+
+  //append quotational marks on the values
+  let arr = val.map(value => `"${value}"`).join(",");
+  const sql = `INSERT INTO ${req.params.table}(${Object.keys(
+    req.body
+  )}) VALUES (${arr})`;
+
+  conn.query(sql, err => {
+    if (err) {
+      return res.status(409).json({
+        err
+      });
+    }
+    return res.status(200).json({
+      success: "Record inserted"
+    });
+  });
+});
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
