@@ -72,9 +72,9 @@ This api can be used in any programming language that supports RESTful principle
 
 ## Built With
 
-- [Express js](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-- [Node js](https://maven.apache.org/) - The web server used
-- [MySQL](https://rometools.github.io/rome/) - The database used
+- [Express js](https://expressjs.com) - The web framework used
+- [Node js](https://nodejs.org/en/) - The web server used
+- [MySQL](https://www.mysql.com) - The database used
 
 ## Contributing
 
@@ -94,4 +94,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 - Hat tip to anyone whose code was used
 - Our Saviours STACKOVERFLOW :)
-- NESCAFE cofee \* **for being my best friend**
+- NESCAFE coffee \* **for being my best friend**
