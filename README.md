@@ -25,30 +25,42 @@ will print all client details from the client table
 ## Routes
 
 GET /{tablename}
-`gets all values for the table`
+
+```
+gets all values for the table`
+```
+
 GET /{tablename}/{column}/{column_value}
+
 ```
 gets values of a table where {column name} = {column value}
 eg mutalldevs.co.ke/api/client/code/kh001
+This returns a client whose code is kh001
+```
 
-    This returns a client whose code is kh001
-    ``
-    GET     /{tablename}/job/{job number}
+GET /{tablename}/job/{job number}
+
     ```
     These are custom queries or as we call them 'jobs' you may want an output out of
     This is still in alpha stage so it is buggy
     ```
-    POST    /{tablename}
+
+POST /{tablename}
+
     ```
     Add a new record to table name supplied. In the request body you must supply key-value pairs for the record to be inserted.
     For testing use postman to do post, put and delete requests
     ```
-    PUT     /{tablename}/{column}/{record_id}
+
+PUT /{tablename}/{column}/{record_id}
+
     ```
     Update the record. Supply the new values in the request body
     Use postman to test your endpoints
     ```
-    DELETE  /{tablename}/{column}/{record_id}
+
+DELETE /{tablename}/{column}/{record_id}
+
     ```
     Delete the record.
     Use postman to test your endpoints
