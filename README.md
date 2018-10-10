@@ -24,14 +24,12 @@ will print all client details from the client table
 
 ## Routes
 
-    GET     /{tablename}
-    ```
-    gets all values for the table
-    ```
-    GET     /{tablename}/{column}/{column_value}
-    ```
-    gets values of a table where {column name} = {column value}
-    eg mutalldevs.co.ke/api/client/code/kh001
+GET /{tablename}
+`gets all values for the table`
+GET /{tablename}/{column}/{column_value}
+```
+gets values of a table where {column name} = {column value}
+eg mutalldevs.co.ke/api/client/code/kh001
 
     This returns a client whose code is kh001
     ``
