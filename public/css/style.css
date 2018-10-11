@@ -1,0 +1,13 @@
+section > * {
+  text-align: center;
+}
+section {
+  margin-top: 20px;
+}
+pre code {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 2rem;
+}
+p {
+  font-family: "Open Sans", sans-serif;
+}
