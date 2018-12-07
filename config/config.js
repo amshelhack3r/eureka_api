@@ -11,5 +11,5 @@ module.exports = {
     PASSWORD: "",
     DBNAME: "mutall_eureka"
   },
-  rootpath: "/node_projects"
+  rootpath: "/node_projects/api"
 };
