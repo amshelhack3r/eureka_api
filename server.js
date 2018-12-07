@@ -41,5 +41,5 @@ app.use(bodyParser.json());
 const routes = require("./routes/crud");
 app.use(rootpath, routes);
 
-const port = 3000;
+const port = 8080 | process.env.PORT;
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
