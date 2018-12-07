@@ -10,5 +10,6 @@ module.exports = {
     USER: "root",
     PASSWORD: "",
     DBNAME: "mutall_eureka"
-  }
+  },
+  rootpath: "/node_projects"
 };

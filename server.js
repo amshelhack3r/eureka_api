@@ -7,10 +7,21 @@ const exphbs = require("express-handlebars");
 //import path
 const path = require("path");
 
+//bring in the config
+const rootpath = require("./config/config").rootpath;
+
 const app = express();
 
 //handle middleware
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine(
+  "handlebars",
+  exphbs({
+    helpers: {
+      rootpath
+    },
+    defaultLayout: "main"
+  })
+);
 app.set("view engine", "handlebars");
 
 // parse application/x-www-form-urlencoded
@@ -28,7 +39,7 @@ app.use(bodyParser.json());
 
 //require the routes we have created
 const routes = require("./routes/crud");
-app.use("/", routes);
+app.use(rootpath, routes);
 
 const port = 3000;
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
